@@ -164,4 +164,4 @@ for all files. Provided by ALX.
   * Usage: `./102-relationship_cities_states_list.py <mysql username>
   <mysql password> <database name>`.
   * Uses the `state` relationship to access the `State` objects linked to `City` objects.
-  * Results are sorted by ascending `cities.id`.
+  * Results are sorted by ascending `cities.i.
