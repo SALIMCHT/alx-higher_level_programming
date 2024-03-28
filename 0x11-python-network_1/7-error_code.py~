@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+""" With request ask for header"""
+import requests
+import sys
+
+try:
+    url = sys.argv[1]
+    html = requests.post(url)
+    print(html.text)
+except requests.exceptions.HTTPError as err:
+    print (err)
+    sys.exit(1)
