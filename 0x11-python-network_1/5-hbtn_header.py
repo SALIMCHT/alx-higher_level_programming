@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-""" With request ask for header"""
-import requests
-import sys
 
-try:
-    url = sys.argv[1]
-    html = requests.get(url)
-    a = html.headers["X-Request-Id"]
-    print(a)
-except:
-    pass
+""" takes in a URL, sends a request to the URL and displays the value."""
+
+import sys
+import requests
+
+
+if __name__ == "__main__":
+
+    cmdURL = sys.argv[1]
+    response = requests.get(cmdURL)
+    X_Request_Id = response.headers["X-Request-Id"]
+    print(X_Request_Id)
