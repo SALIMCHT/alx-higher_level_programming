@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-"""print Error """
-import urllib.request
-from urllib.error import HTTPError
+
+""" takes in a URL, sends a request to the URL and displays the value."""
+
 import sys
+import urllib.request
 
 
-try:
-    url = sys.argv[1]
-    with urllib.request.urlopen(url) as response:
-        html = response.read().decode("utf-8")
-        print(html)
-except urllib.error.HTTPError as e:
-    if hasattr (e, 'code'):
-        print ("Error code:", e.code)
-except:
-    pass
+if __name__ == "__main__":
+    URL = sys.argv[1]
+    try:
+        # reqObj = urllib.request.Request(URL)
+        with urllib.request.urlopen(URL) as response:
+            content = response.read()
+            print(content.decode("utf-8"))
+    except urllib.error.HTTPError as err:
+        print("Error code: {}".format(err.code))
